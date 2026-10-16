@@ -1,0 +1,36 @@
+{%extends 'layout/base.html'%}
+{% block content%}
+<section>
+    <div class="container">
+        {%if products %}
+        <div class="row">
+            {%for p in products %}
+
+
+            <div class="col-md-3 col-6 p-2">
+                <div class="card" style="width: 100%;">
+                    <img src="{{p.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{p.name}}</h3>
+
+                        <h5 class="card-title">{{p.title}}</h5>
+                        <p class="card-text mb-1">{{p.price}} VNĐ.</p>
+
+                        <p class="card-text">{{p.description}}t.</p>
+                        <button href="#" class="btn btn-primary">Xem chi tiết</button>
+                        <button href="#" class="btn btn-danger">Mua ngay</button>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+        {% else%}
+        <div class=" alert alert-warning mt-2">Không tìm thấy dữ liệu!</div>
+        {%endif%}
+
+    </div>
+
+</section>
+
+{%endblock%}
